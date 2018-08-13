@@ -37,7 +37,7 @@
 
   // 操作列表删除符号
   View.prototype._clearCompletedButton = function(completedCount, visible) {
-    this.$clearCompleted.innreHTML = this.template._clearCompletedButton(
+    this.$clearCompleted.innerHTML = this.template.clearCompletedButton(
       completedCount
     );
     this.$clearCompleted.style.display = visible ? "block" : "none";
@@ -46,7 +46,7 @@
   // 列表项选中切换
   View.prototype._setFilter = function(currentPage) {
     qs(".filters .selected").className = "";
-    qs('.filter [href="#/' + currentPage + '"]').className = "selected";
+    qs('.filters [href="#/' + currentPage + '"]').className = "selected";
   };
 
   View.prototype._elementComplete = function(id, completed) {
@@ -99,14 +99,14 @@
   View.prototype.render = function(viewCmd, parameter) {
     var self = this;
     var viewCommands = {
-      showEnteries: function() {
-        self.$todoList.innreHTML = self.template.show(parameter);
+      showEntries: function() {
+        self.$todoList.innerHTML = self.template.show(parameter);
       },
       removeItem: function() {
         self._removeItem(parameter);
       },
       updateElementCount: function() {
-        self.$todoItemCounter.innreHTML = self.template.itemCounter(parameter);
+        self.$todoItemCounter.innerHTML = self.template.itemCounter(parameter);
       },
       clearCompletedButton: function() {
         self._clearCompletedButton(parameter.completed, parameter.visible);

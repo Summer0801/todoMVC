@@ -64,17 +64,17 @@
     for (i = 0, l = data.length; i < l; i++) {
       var template = this.defaultTemplate;
       var completed = "";
-      var cheched = "";
+      var checked = "";
 
       if (data[i].completed) {
         completed = "completed";
-        cheched = "checked";
+        checked = "checked";
       }
 
       template = template.replace("{{id}}", data[i].id);
-      template = template.replace("{{title}}", data[i].title);
-      template = template.replace("{{completed}}", data[i].completed);
-      template = template.replace("{{checked}}", data[i].checked);
+      template = template.replace("{{title}}", escape(data[i].title));
+      template = template.replace("{{completed}}", completed);
+      template = template.replace("{{checked}}", checked);
 
       view = view + template;
     }
@@ -91,7 +91,7 @@
   Template.prototype.itemCounter = function(activeTodos) {
     var plural = activeTodos === 1 ? "" : "s";
 
-    return "<strong>" + activeTodos + "</strong> item" + plural + "left";
+    return "<strong>" + activeTodos + "</strong> item" + plural + " left";
   };
 
   /**
