@@ -100,8 +100,8 @@
    * @param  {[type]} completedTodos The number of completed todos.
    * @returns {string} String containing the count
    */
-  Template.prototype.clearCompletedButton = function(completedTodes) {
-    if (completedTodes > 0) {
+  Template.prototype.clearCompletedButton = function(completedTodos) {
+    if (completedTodos > 0) {
       return "clear completed";
     } else {
       return "";

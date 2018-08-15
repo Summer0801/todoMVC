@@ -4,12 +4,17 @@
 
   /**
    * View that abstracts away the browser's DOM completely.
+   * 将浏览器的DOM完全抽象出来的视图。
+   *
    * It has two simple entry points:
+   * 它有两个简单的入口点：
    *
    *   - bind(eventName, handler)
    *     Takes a todo application event and registers the handler
+   *     接受todo应用程序事件并注册处理程序
    *   - render(command, parameterObject)
    *     Renders the given command with the options
+   *     使用选项呈现给定的命令
    */
   function View(template) {
     this.template = template;
@@ -190,6 +195,7 @@
       });
     } else if (event === "toggleAll") {
       $on(self.$toggleAll, "click", function() {
+        debugger;
         handler({
           completed: this.checked
         });
@@ -208,6 +214,7 @@
       });
     } else if (event === "itemToggle") {
       $delegate(self.$todoList, ".toggle", "click", function() {
+        debugger;
         handler({
           id: self._itemId(this),
           completed: this.checked

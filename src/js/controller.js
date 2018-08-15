@@ -223,6 +223,7 @@
   /**
    * Updates the pieces of the page which change depending on the remaining
    * number of todos.
+   * 根据剩余的todos的数量来更新页面的各个部分。
    */
   Controller.prototype._updateCount = function() {
     var self = this;
@@ -234,7 +235,7 @@
       });
 
       self.view.render("toggleAll", {
-        check: todos.completed === todos.total
+        checked: todos.completed === todos.total
       });
       self.view.render("contentBlockVisibility", { visible: todos.total > 0 });
     });

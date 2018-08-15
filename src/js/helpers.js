@@ -18,6 +18,8 @@
 
   // Attach a handler to event for all elements that match the selector,
   // now or in the future, based on a root element
+  //为所有匹配选择器的元素附加一个处理程序，
+  //现在或将来，基于根元素
   window.$delegate = function(target, selector, type, handler) {
     function dispatchEvent(event) {
       var targetElement = event.target;
@@ -48,6 +50,7 @@
   };
 
   // Allow for looping on nodes by chaining:
+  // 允许通过链接在节点上循环：
   // qsa('.foo').forEach(function() {})
   NodeList.prototype.forEach = Array.prototype.forEach;
 })(window);

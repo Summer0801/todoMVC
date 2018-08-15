@@ -6,5 +6,8 @@
     "browser": true,
     "jquery": true
   },
-  "globals": {}
+  "globals": {},
+  "rules": {
+    "no-console": "off"
+  }
 }

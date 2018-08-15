@@ -3,6 +3,7 @@
 
   /**
    * Creates a new Model instance and hooks up the storage.
+   * 建立一个新的模型实例并连接存储。
    *
    * @constructor
    * @param {object} storage A reference to the client side storage class
@@ -32,7 +33,7 @@
    * return everything. If you pass in a string or number it'll look that up as
    * the ID of the model to find. Lastly, you can pass it an object to match
    * against.
-   *在存储器中找到并返回一个模型。如果没有查询，它只会返回所有东西。如果你传入一个字符串或数字，它会显示为找到的模型的ID。最后，您可以传递一个与之匹配的对象。
+   * 在存储器中找到并返回一个模型。如果没有查询，它只会返回所有东西。如果你传入一个字符串或数字，它会显示为找到的模型的ID。最后，您可以传递一个与之匹配的对象。
    *
    * @param {string|number|object} [query] A query to match models against
    * @param {function} [callback] The callback to fire after the model is found

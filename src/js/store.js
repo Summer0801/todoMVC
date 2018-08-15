@@ -10,8 +10,8 @@
    * @param {string} name The name of our DB we want to use
    * @param {function} callback Our fake DB uses callbacks because in
    * real life you probably would be making AJAX calls
+   * @param函数回调我们的假DB，因为现实生活中你可能会做AJAX调用
    */
-
   function Store(name, callback) {
     callback = callback || function() {};
 
@@ -55,7 +55,7 @@
             return false;
           }
         }
-        return false;
+        return true;
       })
     );
   };
@@ -97,7 +97,7 @@
         }
       }
 
-      localStorage.getItem(this._dbName, JSON.stringify(todos));
+      localStorage.setItem(this._dbName, JSON.stringify(todos));
       callback.call(this, todos);
     } else {
       // Generate an ID
@@ -124,7 +124,7 @@
       }
     }
 
-    localStorage.getItem(this._dbName, JSON.stringify(todos));
+    localStorage.setItem(this._dbName, JSON.stringify(todos));
     callback.call(this, todos);
   };
 
